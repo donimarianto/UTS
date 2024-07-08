@@ -7,19 +7,19 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         .navbar {
-            background-color: #374254;
+            background-color: #e8e8e8;
         }
         .navbar-brand, .nav-link, .dropdown-item {
-            color: #fff !important;
+            color: #011526 !important;
         }
         .navbar-toggler-icon {
             filter: invert(1);
         }
         .dropdown-menu {
-            background-color: #374254;
+            background-color: #e8e8e8;
         }
         .dropdown-item:hover {
-            background-color: #374254;
+            background-color: #e8e8e8;
         }
     </style>
 </head>

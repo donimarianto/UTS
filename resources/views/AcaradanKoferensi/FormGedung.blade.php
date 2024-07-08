@@ -8,7 +8,7 @@
     <style>
         .form-container {
             margin-top: 50px;
-            background-color: #f8f9fa;
+            background-color: #e8e8e8;
             padding: 30px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);

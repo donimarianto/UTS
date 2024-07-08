@@ -10,11 +10,15 @@
             height: 200px; 
             object-fit: cover;
         }
+        .card{
+            margin: 30px;
+        }
     </style>
 </head>
 <body>
 @extends('AcaradanKoferensi.header')
 @section('content')
+<br>
 <div class="row">
 @foreach ($data_gedung as $FormGedung)
 
