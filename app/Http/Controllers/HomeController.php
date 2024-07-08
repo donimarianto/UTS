@@ -13,6 +13,17 @@ class HomeController extends Controller
         $data->kelas=$request->kelas;
         $data->fasilitas=$request->fasilitas;
         $data->harga=$request->harga;
+
+        //cek upload file
+        $objectName = "gambar";
+        $request->validate([$objectName => 'nullable|mimes:jpeg,jpg,png|max:1000']);
+        if($request->file()){
+            if(null!==$request->$objectName){
+                $fileName = time().'_'.$request->$objectName->getClientOriginalName();
+                $request->$objectName->move(public_path('gambar'),$fileName); 
+                $data->gambar = $fileName;
+        }
+    }
         $data->save();
         return redirect()->route('FormGedung');
     }
@@ -32,6 +43,8 @@ class HomeController extends Controller
     public function DashboardGedung(){
         return view('AcaradanKoferensi.DashboardGedung');
     }
+
+    
 
 
 }

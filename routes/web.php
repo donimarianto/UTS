@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PembayaranController;
+use App\Http\Controllers\DekorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,3 +31,10 @@ Route::get('hapuspembayaran{id}',[PembayaranController::class, 'hapuspembayaran'
 Route::post('simpanPembayaran',[PembayaranController::class, 'simpanPembayaran'])->name('simpanPembayaran');
 
 Route::get('DashboardGedung',[HomeController::class, 'DashboardGedung'])->name('DashboardGedung');
+
+Route::post('gambar',[HomeController::class, 'gambar'])->name('gambar');
+
+Route::get('FormDekor',[DekorController::class, 'FormDekor'])->name('FormDekor');
+Route::get('viewdekor',[DekorController::class, 'viewdekor'])->name('viewdekor');
+Route::get('hapusDekor{id}',[DekorController::class, 'hapusDekor'])->name('hapusDekor');
+Route::post('simpanDekor',[DekorController::class, 'simpanDekor'])->name('simpanDekor');

@@ -8,8 +8,10 @@
 </head>
 <body>
 
+
 @include('AcaradanKoferensi.navbar')
 
 @yield('content')
 
 @include('AcaradanKoferensi.footer')   
+

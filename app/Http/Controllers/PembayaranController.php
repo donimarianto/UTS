@@ -10,7 +10,8 @@ use Illuminate\Http\Request;
 class PembayaranController extends Controller
 {
     public function FormPembayaran(){
-        return view('AcaradanKoferensi.FormPembayaran');
+        $gedung=GedungModel::all();
+        return view('AcaradanKoferensi.FormPembayaran',compact('gedung'));
     }
 
     public function viewpembayaran(){
@@ -23,12 +24,13 @@ class PembayaranController extends Controller
         $data= new PembayaranModel;
         $data->nama=$request->nama;
         $data->nomor_telepon=$request->nomor_telepon;
-        $data->kelas_gedung=$request->kelas_gedung;
+        $data->kelas_gedung=$request->fasilitas;
         $data->tanggal_acara=$request->tanggal_acara;
         $data->harga=$request->harga;
         $data->bayar=$request->bayar;
+        $data->kembalian=$request->kembalian;
         $data->save();
-        return redirect()->route('FormPembayaran')->with('success', 'Berhasil melakukan pembayaran.');
+        return redirect()->route('FormPembayaran');
     }
 
     public function hapuspembayaran($id){
