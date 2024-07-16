@@ -39,20 +39,20 @@
                     <input type="number" class="form-control" id="harga" name="harga" readonly>
                 </div>
                 <div class="form-group">
-                    <label for="bayar">Bayar <i class="fa fa-money"></i></label>
-                    <input type="text" class="form-control" name="bayar" id="bayar" onchange="hitungNominal()" required>
-                </div>
-                <div class="form-group">
-                    <label for="kembalian">Kembalian <i class="fa fa-money"></i></label>
-                    <input type="number" class="form-control" name="kembalian" id="kembalian" readonly>
-                </div>
-                <div class="form-group">
                     <label for="diskon">Diskon <i class="fa fa-percent"></i></label>
                     <input type="number" class="form-control" name="diskon" id="diskon" readonly>
                 </div>
                 <div class="form-group">
                     <label for="total">Total <i class="fa fa-money"></i></label>
                     <input type="number" class="form-control" name="total" id="total" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="bayar">Bayar <i class="fa fa-money"></i></label>
+                    <input type="text" class="form-control" name="bayar" id="bayar" onchange="hitungNominal()" required>
+                </div>
+                <div class="form-group">
+                    <label for="kembalian">Kembalian <i class="fa fa-money"></i></label>
+                    <input type="number" class="form-control" name="kembalian" id="kembalian" readonly>
                 </div>
                 <button type="submit" class="btn btn-primary btn-block"><i class="fa fa-save"></i> Simpan</button>
             </form>

@@ -21,10 +21,10 @@ return new class extends Migration
             $table->date('tanggal_acara');
             $table->date('tanggal_selesai');
             $table->decimal('harga', 10, 2);
-            $table->decimal('bayar', 10, 2);
-            $table->decimal('kembalian', 10, 2);
             $table->decimal('diskon', 10, 2);
             $table->decimal('total', 10, 2);
+            $table->decimal('bayar', 10, 2);
+            $table->decimal('kembalian', 10, 2);
             $table->timestamp('failed_at')->useCurrent();
         });
     }

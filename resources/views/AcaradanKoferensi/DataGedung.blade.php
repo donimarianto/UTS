@@ -1,11 +1,25 @@
+
+<style>
+    .card-img-top{
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+    .card{
+        margin: 30px;
+    }
+</style>
 @extends('AcaradanKoferensi.header')
+
 @section('content')
+
+
 <div class="container mt-5">
     <div class="row">
         @foreach ($data_gedung as $FormGedung)
         <div class="col-md-4 mb-4">
             <div class="card">
-                <img src="{{ asset('gambar')}}/{{ $FormGedung->gambar  }}" class="card-img-top" alt="...">
+                <img src="{{ asset('gambar')}}/{{ $FormGedung->gambar  }}" class="card-img-top"  alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Kelas: {{ $FormGedung->kelas }}</h5>
                     <h6 class="card-subtitle mb-2 text-muted">Fasilitas: {{ $FormGedung->fasilitas }}</h6>
