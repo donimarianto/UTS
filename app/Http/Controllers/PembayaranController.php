@@ -26,9 +26,12 @@ class PembayaranController extends Controller
         $data->nomor_telepon=$request->nomor_telepon;
         $data->kelas_gedung=$request->fasilitas;
         $data->tanggal_acara=$request->tanggal_acara;
+        $data->tanggal_selesai=$request->tanggal_selesai;
         $data->harga=$request->harga;
         $data->bayar=$request->bayar;
         $data->kembalian=$request->kembalian;
+        $data->diskon=$request->diskon;
+        $data->total=$request->total;
         $data->save();
         return redirect()->route('FormPembayaran');
     }

@@ -1,59 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>dataDekor</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        .table {
-            margin-top: 20px;
-        }
-        thead {
-            background-color: #f8f9fa;
-        }
-        .table-hover tbody tr:hover {
-            background-color: #f1f1f1;
-        }
-        .btn-danger {
-            background-color: #dc3545;
-            border: none;
-        }
-        .btn-danger:hover {
-            background-color: #c82333;
-        }
-    </style>
-</head>
-<body>
 @extends('AcaradanKoferensi.header')
+
 @section('content')
 <div class="container">
     <h2 class="text-center my-4">Data Dekor</h2>
-    <table class="table table-bordered table-hover">
-        <thead>
-            <tr>
-                <th class="text-center">Dekor</th>
-                <th class="text-center">Nama</th>
-                <th class="text-center">Nomor Telepon</th>
-                <th class="text-center">Alamat</th>
-            </tr>
-        </thead>
-        <tbody>
+    <div class="row">
         @foreach ($data_dekor as $DataDekor)
-            <tr>
-                <td>{{ $DataDekor->dekor }}</td>
-                <td>{{ $DataDekor->nama }}</td>
-                <td>{{ $DataDekor->nomor_telepon }}</td>
-                <td>{{ $DataDekor->alamat }}</td>
-                <td><a href="{{ route('hapusDekor', $DataDekor->id) }}" class="btn btn-danger">Hapus</a></td>
-            </tr>
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title">Dekor: {{ $DataDekor->dekor }}</h5>
+                </div>
+                <div class="card-body">
+                    <table class="table table-bordered">
+                        <tbody>
+                            <tr>
+                                <th class="w-25">Nama</th>
+                                <td>{{ $DataDekor->nama }}</td>
+                            </tr>
+                            <tr>
+                                <th>Nomor Telepon</th>
+                                <td>{{ $DataDekor->nomor_telepon }}</td>
+                            </tr>
+                            <tr>
+                                <th>Alamat</th>
+                                <td>{{ $DataDekor->alamat }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <a href="{{ route('hapusDekor', $DataDekor->id) }}" class="btn btn-sm btn-danger" title="Hapus"><i class="fa fa-trash"></i></a>
+                </div>
+            </div>
+        </div>
         @endforeach
-        </tbody>
-    </table>
+    </div>
 </div>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
-</html>
 @endsection

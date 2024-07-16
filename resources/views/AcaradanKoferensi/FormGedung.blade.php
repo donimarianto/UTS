@@ -1,55 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>formGedung</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        .form-container {
-            margin-top: 50px;
-            background-color: #e8e8e8;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .form-container h2 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-    </style>
-</head>
-<body>
+
 @extends('AcaradanKoferensi.header')
+
 @section('content')
-<div class="container">
-    <div class="form-container">
-        <h2>Form Gedung</h2>
-        <form method="POST" action="{{route('simpanData')}}" enctype="multipart/form-data">
-            @csrf
-            <div class="form-group">
-                <label for="kelas">Kelas</label>
-                <input type="text" class="form-control" name="kelas" required>
-            </div>
-            <div class="form-group">
-                <label for="fasilitas">Fasilitas</label>
-                <input type="text" class="form-control" name="fasilitas" required>
-            </div>
-            <div class="form-group">
-                <label for="harga">Harga</label>
-                <input type="text" class="form-control" name="harga" required>
-            </div>
-            <div class="form-group">
-                <label for="gambar">Gambar</label>
-                <input type="file" class="form-control-file" name="gambar" required>
-            </div>
-            <button type="submit" class="btn btn-primary">Simpan</button>
-        </form>
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-header bg-primary text-white">
+            <h4 class="card-title mb-0">Form Gedung <i class="fa fa-building"></i></h4>
+        </div>
+        <div class="card-body">
+            <form method="POST" action="{{ route('simpanData') }}" enctype="multipart/form-data">
+                @csrf
+                <div class="form-group">
+                    <label for="kelas">Kelas <i class="fa fa-tag"></i></label>
+                    <input type="text" class="form-control" name="kelas" required>
+                </div>
+                <div class="form-group">
+                    <label for="fasilitas">Fasilitas <i class="fa fa-wrench"></i></label>
+                    <input type="text" class="form-control" name="fasilitas" required>
+                </div>
+                <div class="form-group">
+                    <label for="harga">Harga <i class="fa fa-money"></i></label>
+                    <input type="text" class="form-control" name="harga" required>
+                </div>
+                <div class="form-group">
+                    <label for="gambar">Gambar <i class="fa fa-image"></i></label>
+                    <input type="file" class="form-control-file" name="gambar" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block"><i class="fa fa-save"></i> Simpan</button>
+            </form>
+        </div>
     </div>
 </div>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
-</html>
 @endsection
