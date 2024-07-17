@@ -77,7 +77,7 @@
         var selisihHari = Math.ceil((tanggal_selesai - tanggal_acara) / (1000 * 60 * 60 * 24));
 
         var diskon = 0;
-        if (selisihHari > 5) {
+        if (selisihHari > 2) {
             diskon = harga * 0.05;
         }
         var total = harga - diskon;
