@@ -37,4 +37,7 @@ Route::post('gambar',[HomeController::class, 'gambar'])->name('gambar');
 Route::get('FormDekor',[DekorController::class, 'FormDekor'])->name('FormDekor');
 Route::get('viewdekor',[DekorController::class, 'viewdekor'])->name('viewdekor');
 Route::get('hapusDekor{id}',[DekorController::class, 'hapusDekor'])->name('hapusDekor');
+Route::get('error', function () {
+    return view('AcaradanKoferensi.error');
+})->name('error');
 Route::post('simpanDekor',[DekorController::class, 'simpanDekor'])->name('simpanDekor');

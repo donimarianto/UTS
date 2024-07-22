@@ -18,8 +18,8 @@ return new class extends Migration
             $table->string('nama');
             $table->string('nomor_telepon');
             $table->string('kelas_gedung');
-            $table->date('tanggal_acara');
-            $table->date('tanggal_selesai');
+            $table->date('tanggal_acara')->unique();
+            $table->date('tanggal_selesai')->unique();
             $table->decimal('harga', 10, 2);
             $table->decimal('diskon', 10, 2);
             $table->decimal('total', 10, 2);
